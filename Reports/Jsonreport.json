@@ -1,0 +1,68 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-10-04T06:20:07.494Z",
+        "line": 29,
+        "name": "Test for bus searching functionality",
+        "description": "",
+        "id": "automation-of-redbus;test-for-bus-searching-functionality;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 23,
+            "name": "User is on Home page",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 154000,
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "User enters Guwahati (All Locations) and North Lakhimpur",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 132000,
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "user clicks on Search Buses Button",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 279000,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "User should be able to find successfully and buses should be displayed",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@TC_SEARCH_006"
+          }
+        ]
+      }
+    ],
+    "name": "Automation of Redbus",
+    "description": "",
+    "id": "automation-of-redbus",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/RedbusAutomation/Features/Redbus.feature",
+    "tags": []
+  }
+]
