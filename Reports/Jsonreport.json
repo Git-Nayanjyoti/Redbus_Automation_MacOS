@@ -3,66 +3,616 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-10-04T06:20:07.494Z",
-        "line": 29,
-        "name": "Test for bus searching functionality",
+        "start_timestamp": "2021-10-14T11:58:49.650Z",
+        "line": 4,
+        "name": "Test for bus hire Airport pickup from Airport",
         "description": "",
-        "id": "automation-of-redbus;test-for-bus-searching-functionality;;2",
+        "id": "bushire-airport;test-for-bus-hire-airport-pickup-from-airport",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 6602461000,
+              "status": "passed"
             },
-            "line": 23,
-            "name": "User is on Home page",
-            "match": {},
+            "line": 5,
+            "name": "User is on Home page for airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_is_on_home_page_for_airport()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 154000,
-              "status": "skipped"
+              "duration": 2363532000,
+              "status": "passed"
             },
-            "line": 24,
-            "name": "User enters Guwahati (All Locations) and North Lakhimpur",
-            "match": {},
+            "line": 6,
+            "name": "User clicks on Bus hire for airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_clicks_on_bus_hire_for_airport()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 132000,
-              "status": "skipped"
+              "duration": 177843000,
+              "status": "passed"
             },
-            "line": 25,
-            "name": "user clicks on Search Buses Button",
-            "match": {},
+            "line": 7,
+            "name": "User clicks on Airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_clicks_on_airport()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 279000,
-              "status": "skipped"
+              "duration": 3576713000,
+              "status": "passed"
             },
-            "line": 26,
-            "name": "User should be able to find successfully and buses should be displayed",
-            "match": {},
+            "line": 8,
+            "name": "User selects city",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_selects_city()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4104457000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User enter destination for airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_enter_destination_for_airport()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3472460000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enters date and time when he wants the vehicle",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_enters_date_and_time_when_he_wants_the_vehicle()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 73715000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User enters passenger count for airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_enters_passenger_count_for_airport()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 429084000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User clicks on Airport proceed and successfully hires bus",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_clicks_on_airport_proceed_and_successfully_hires_bus()"
+            },
             "keyword": "Then "
           }
-        ],
-        "tags": [
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-14T11:59:10.517Z",
+        "line": 15,
+        "name": "Test for bus hire Airport Drop to Airport",
+        "description": "",
+        "id": "bushire-airport;test-for-bus-hire-airport-drop-to-airport",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
           {
-            "name": "@TC_SEARCH_006"
+            "result": {
+              "duration": 2751491000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User is on Home page for airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_is_on_home_page_for_airport()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2108925000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User clicks on Bus hire for airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_clicks_on_bus_hire_for_airport()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 161626000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User clicks on Airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_clicks_on_airport()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2083777000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User clicks on Drop to Airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_clicks_on_drop_to_airport()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3236644000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User selects city",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_selects_city()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3868743000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User enters pickup location for aiport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_enters_pickup_location_for_aiport()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3406952000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User enters date and time when he wants the vehicle",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_enters_date_and_time_when_he_wants_the_vehicle()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 76268000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User enters passenger count for airport",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_enters_passenger_count_for_airport()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 375607000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User clicks on Airport proceed and successfully hires bus",
+            "match": {
+              "location": "com.stepDefinition.BusHireAirportSD.user_clicks_on_airport_proceed_and_successfully_hires_bus()"
+            },
+            "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "Automation of Redbus",
+    "name": "BusHire Airport",
     "description": "",
-    "id": "automation-of-redbus",
+    "id": "bushire-airport",
     "keyword": "Feature",
-    "uri": "file:src/test/java/RedbusAutomation/Features/Redbus.feature",
+    "uri": "file:src/test/java/com/Features/BusHireAirport.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-10-14T11:59:28.605Z",
+        "line": 3,
+        "name": "Test for bus hire Local",
+        "description": "",
+        "id": "bushire-local;test-for-bus-hire-local",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2819723000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is on Home page for local",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_is_on_home_page_for_local()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2058727000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User clicks on Bus hire for local",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_clicks_on_bus_hire_for_local()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 125574000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on Local",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_clicks_on_local()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2848261000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User enters pickup location for local",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_enters_pickup_location_for_local()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 125694000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User selects package",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_selects_package()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3460422000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User enters start date and time for local",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_enters_start_date_and_time_for_local()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 78265000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enters passenger count for local",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_enters_passenger_count_for_local()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 377844000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User should be able to click on local proceed successfully",
+            "match": {
+              "location": "com.stepDefinition.BusHireLocalSD.user_should_be_able_to_click_on_local_proceed_successfully()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "BusHire Local",
+    "description": "",
+    "id": "bushire-local",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/com/Features/BusHireLocal.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-10-14T11:59:40.510Z",
+        "line": 3,
+        "name": "Test for bus hire OutStation roundTrip",
+        "description": "",
+        "id": "bushire-outstation;test-for-bus-hire-outstation-roundtrip",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2741548000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is on Home page",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_is_on_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2107540000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User clicks on Bus hire",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_clicks_on_bus_hire()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 509784000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User clicks on OutStation",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_clicks_on_out_station()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3848060000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User enters pickup location",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_pickup_location()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3750138000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User enter destination",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enter_destination()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6389864000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User enters current date",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_current_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6292190000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enters return date",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_return_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 73180000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User enters passenger count",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_passenger_count()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 353388000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User clicks on proceed and successfully hires bus",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_clicks_on_proceed_and_successfully_hires_bus()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-14T12:00:06.585Z",
+        "line": 15,
+        "name": "Test for bus hire OutStation oneWayTrip",
+        "description": "",
+        "id": "bushire-outstation;test-for-bus-hire-outstation-onewaytrip",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2701290000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User is on Home page",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_is_on_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2098051000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User clicks on Bus hire",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_clicks_on_bus_hire()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 127739000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User clicks on OutStation",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_clicks_on_out_station()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2086603000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User clicks on oneWayTrip",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_clicks_on_one_way_trip()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3805211000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User enters pickup location",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_pickup_location()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3703434000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User enter destination",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enter_destination()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6333773000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User enters current date",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_current_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6314495000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User enters return date",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_return_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 70709000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User enters passenger count",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_enters_passenger_count()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 304688000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User clicks on proceed and successfully hires bus",
+            "match": {
+              "location": "com.stepDefinition.BusHireOutstationSD.user_clicks_on_proceed_and_successfully_hires_bus()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "BusHire Outstation",
+    "description": "",
+    "id": "bushire-outstation",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/com/Features/BusHireOutStn.feature",
     "tags": []
   }
 ]

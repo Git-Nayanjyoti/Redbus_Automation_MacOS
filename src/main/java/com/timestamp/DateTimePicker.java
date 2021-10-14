@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,8 +20,6 @@ public class DateTimePicker extends Base {
 		String[] timeArr = time.split(":");
 		String hour = timeArr[0];
 		String minute = timeArr[1];
-		System.out.println(hour);
-		System.out.println(minute);
 		String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
 				"October", "November", "December" };
 		String[] dateArr = date.split("-", 2);
@@ -53,10 +52,9 @@ public class DateTimePicker extends Base {
 			System.out.println("Pre date can't be entered");
 		} else {
 			String MonthYear = dateArr[1].replace("-", " ");
-			Thread.sleep(3000);
+			driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 			while (!driver.findElement(By.xpath("/html/body/div[5]/div[3]/div/div[1]/div/div[4]/div[1]/div[1]/div/p"))
 					.getText().equalsIgnoreCase(MonthYear)) {
-				Thread.sleep(2000);
 				driver.findElement(By.xpath("/html/body/div[5]/div[3]/div/div[1]/div/div[4]/div[1]/div[1]/button[2]"))
 						.click();
 			}
@@ -91,13 +89,12 @@ public class DateTimePicker extends Base {
 			}
 			// For selecting the time
 			// Hour Hand
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			List<WebElement> hourHand = driver
 					.findElement(By.xpath("/html/body/div[5]/div[3]/div/div[1]/div/div[4]/div/div"))
 					.findElements(By.tagName("span"));
-			Thread.sleep(2000);
 			for (int hrs = 0; hrs < hourHand.size(); hrs++) {
 				if (hourHand.get(hrs).getText().equals(hour)) {
-					Thread.sleep(2000);
 					WebElement cor1 = hourHand.get(hrs);
 					Actions clickonhour = new Actions(driver);
 					clickonhour.moveToElement(cor1).click().perform();
@@ -107,14 +104,12 @@ public class DateTimePicker extends Base {
 				}
 			}
 			// Second Hand
-			Thread.sleep(3000);
-			List<WebElement> secondHand = driver  
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			List<WebElement> secondHand = driver
 					.findElement(By.xpath("/html/body/div[5]/div[3]/div/div[1]/div/div[4]/div/div"))
 					.findElements(By.tagName("span"));
-			Thread.sleep(2000);
 			for (int min = 0; min < secondHand.size(); min++) {
 				if (secondHand.get(min).getText().equals(minute)) {
-					Thread.sleep(2000);
 					WebElement cor2 = secondHand.get(min);
 					Actions clickonhour = new Actions(driver);
 					clickonhour.moveToElement(cor2).click().perform();
@@ -123,6 +118,7 @@ public class DateTimePicker extends Base {
 
 				}
 			}
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("/html/body/div[5]/div[3]/div/div[2]/button[2]")).click();
 
 		}

@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.2">
-    <testcase classname="Automation of Redbus" name="Test for bus searching functionality" time="0.073">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given User is on Home page..................................................undefined
-When User enters Guwahati (All Locations) and North Lakhimpur...............skipped
-And user clicks on Search Buses Button......................................skipped
-Then User should be able to find successfully and buses should be displayed.skipped
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="104.601">
+    <testcase classname="BusHire Airport" name="Test for bus hire Airport pickup from Airport" time="20.857">
+        <system-out><![CDATA[Given User is on Home page for airport......................................passed
+When User clicks on Bus hire for airport....................................passed
+And User clicks on Airport..................................................passed
+And User selects city.......................................................passed
+And User enter destination for airport......................................passed
+And User enters date and time when he wants the vehicle.....................passed
+And User enters passenger count for airport.................................passed
+Then User clicks on Airport proceed and successfully hires bus..............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="BusHire Airport" name="Test for bus hire Airport Drop to Airport" time="18.075">
+        <system-out><![CDATA[Given User is on Home page for airport......................................passed
+When User clicks on Bus hire for airport....................................passed
+And User clicks on Airport..................................................passed
+And User clicks on Drop to Airport..........................................passed
+And User selects city.......................................................passed
+And User enters pickup location for aiport..................................passed
+And User enters date and time when he wants the vehicle.....................passed
+And User enters passenger count for airport.................................passed
+Then User clicks on Airport proceed and successfully hires bus..............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="BusHire Local" name="Test for bus hire Local" time="11.899">
+        <system-out><![CDATA[Given User is on Home page for local........................................passed
+When User clicks on Bus hire for local......................................passed
+And User clicks on Local....................................................passed
+And User enters pickup location for local...................................passed
+And User selects package....................................................passed
+And User enters start date and time for local...............................passed
+And User enters passenger count for local...................................passed
+Then User should be able to click on local proceed successfully.............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="BusHire Outstation" name="Test for bus hire OutStation roundTrip" time="26.071">
+        <system-out><![CDATA[Given User is on Home page..................................................passed
+When User clicks on Bus hire................................................passed
+And User clicks on OutStation...............................................passed
+And User enters pickup location.............................................passed
+And User enter destination..................................................passed
+And User enters current date................................................passed
+And User enters return date.................................................passed
+And User enters passenger count.............................................passed
+Then User clicks on proceed and successfully hires bus......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="BusHire Outstation" name="Test for bus hire OutStation oneWayTrip" time="27.549">
+        <system-out><![CDATA[Given User is on Home page..................................................passed
+When User clicks on Bus hire................................................passed
+And User clicks on OutStation...............................................passed
+And User clicks on oneWayTrip...............................................passed
+And User enters pickup location.............................................passed
+And User enter destination..................................................passed
+And User enters current date................................................passed
+And User enters return date.................................................passed
+And User enters passenger count.............................................passed
+Then User clicks on proceed and successfully hires bus......................passed
+]]></system-out>
     </testcase>
 </testsuite>

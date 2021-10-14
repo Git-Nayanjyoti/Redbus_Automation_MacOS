@@ -22,4 +22,4 @@ Scenario: Test for bus hire OutStation oneWayTrip
 	And User enters current date 
 	And User enters return date 
 	And User enters passenger count 
-	Then User clicks on proceed and successfully hires bus 
+	Then User clicks on proceed and successfully hires bus

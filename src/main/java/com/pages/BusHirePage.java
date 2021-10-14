@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,46 +17,101 @@ import com.timestamp.DateTimePicker;
 import java.text.ParseException;
 
 public class BusHirePage extends Base {
-	static WebElement busHireOptions;
 	DateTimePicker DTPicker = new DateTimePicker();
+
+	// Page Factory Implementation
+	@FindBy(id = "redBus Bus Hire")
+	WebElement BushireButton;
+
+	@FindBy(xpath = "/html/body/div[1]/div/div[5]/div[2]/object")
+	WebElement BusHireOptions;
+
+	@FindBy(xpath = "/html/body/div[1]/div/div[4]/div[1]")
+	WebElement OutstationButton;
+	
+	@FindBy(id = "locationTextFieldLocal")
+	WebElement LocationField;
+	
+	@FindBy(id = "local_dest_name")
+	WebElement DestinationField;
+
+	@FindBy(id = "OSLeadGen_DoJStart")
+	WebElement StartDateField;
+
+	@FindBy(id = "OSLeadGen_DoJEnd")
+	WebElement EndDateField;
+
+	@FindBy(id = "numberOfPax")
+	WebElement PassengerCountField;
+
+	@FindBy(id = "proceedButtonOutstation")
+	WebElement ProceedButtonOutstation;
+	
+	@FindBy(id = "oneway")
+	WebElement OnewayButton;
+	
+	@FindBy(xpath = "/html/body/div[1]/div/div[4]/div[2]")
+	WebElement LocalButton;
+	
+	@FindBy(id = "LocalLeadGen_Pckage_Tap")
+	WebElement PackageOptions;
+	
+	@FindBy(xpath = "/html/body/ul[2]")
+	WebElement PickupLocDropdown;
+	
+	@FindBy(xpath = "/html/body/ul[3]")
+	WebElement DestinationDropdown;
+	
+	@FindBy(id = "from_datepicker")
+	WebElement DateFieldLocal;
+
+	@FindBy(id = "proceedButtonLocal")
+	WebElement ProceedLocal;
+	
+	@FindBy(className = "select-selected")
+	WebElement CityField;
+	
+	@FindBy(className = "select-items")
+	WebElement CityDropdown;
+	
+	@FindBy(xpath = "/html/body/div[1]/div/div[4]/div[3]")
+	WebElement AirportButton;
+	
+	@FindBy(id = "AirporLeadGen_DoJ")
+	WebElement DateFieldAirport;
+	
+	@FindBy(id = "to_airport")
+	WebElement DropToAirportButton;
+	
+	@FindBy(id = "proceedButtonAirport")
+	WebElement ProceedButtonAirport;
+	
+	@FindBy(xpath = "/html/body/ul")
+	WebElement AirportLocationDropdown; 
+	
+	// methods for Bus Hire Page
+
+	// start of the methods for Bus Hire Outstation
 
 	// method to click on Bus Hire button in homepage
 	public void clickBusHire() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.findElement(By.id("redBus Bus Hire")).click();
+		// initialising PageFactory
+		PageFactory.initElements(driver, this);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		BushireButton.click();
 	}
 
-	// method to click on outstatin button inside Bus Hire
+	// method to click on outstation button inside Bus Hire
 	public void clickOutStation() throws InterruptedException {
-		busHireOptions = driver.findElement(By.xpath("/html/body/div[1]/div/div[5]/div[2]/object"));
-		driver.switchTo().frame(busHireOptions);
-
-		driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/div[1]")).click();
-		Thread.sleep(2000);
-	}
-
-	// method to click on Local button inside Bus Hire
-	public void selectLocal() throws InterruptedException {
-		WebElement frame = driver.findElement(By.xpath("/html/body/div[1]/div/div[5]/div[2]/object"));
-		driver.switchTo().frame(frame);
-		driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/div[2]")).click();
-		Thread.sleep(3000);
-	}
-
-	// method to click on Airport button inside Bus Hire
-	public void clickAirport() throws InterruptedException {
-		WebElement frame = driver.findElement(By.xpath("/html/body/div[1]/div/div[5]/div[2]/object"));
-		driver.switchTo().frame(frame);
-		driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/div[3]")).click();
-		Thread.sleep(3000);
+		driver.switchTo().frame(BusHireOptions);
+		OutstationButton.click();
 	}
 
 	// method to enter Pickup Loaction
 	public void EnterPickupLocation(String pick) throws InterruptedException {
-		driver.findElement(By.id("locationTextFieldLocal")).sendKeys(pick);
-		Thread.sleep(2000);
-
-		List<WebElement> option1 = driver.findElement(By.xpath("/html/body/ul[2]")).findElements(By.tagName("li"));
+		Thread.sleep(3000);
+		LocationField.sendKeys(pick);
+		List<WebElement> option1 = PickupLocDropdown.findElements(By.tagName("li"));
 		for (int i = 0; i < option1.size(); i++) {
 			List<WebElement> spans = option1.get(i).findElements(By.tagName("span"));
 			if (spans.get(1).getText().equals(pick)) {
@@ -65,9 +122,9 @@ public class BusHirePage extends Base {
 
 	// method to enter the destination
 	public void EnterDestination(String destiny) throws InterruptedException {
-		driver.findElement(By.id("local_dest_name")).sendKeys(destiny);
-		Thread.sleep(2000);
-		List<WebElement> option2 = driver.findElement(By.xpath("/html/body/ul[3]")).findElements(By.tagName("li"));
+		Thread.sleep(3000);
+		DestinationField.sendKeys(destiny);
+		List<WebElement> option2 = DestinationDropdown.findElements(By.tagName("li"));
 		for (int i = 0; i < option2.size(); i++) {
 			List<WebElement> spans = option2.get(i).findElements(By.tagName("span"));
 			if (spans.get(1).getText().equals(destiny)) {
@@ -78,12 +135,8 @@ public class BusHirePage extends Base {
 
 	// method to enter date and time from when the bus is required
 	public void EnterDateTime(String inDate, String intime) throws InterruptedException, ParseException {
-		// Thread.sleep(1000);
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.id("OSLeadGen_DoJStart")).click();
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("OSLeadGen_DoJStart")));
+		Thread.sleep(3000);
+		StartDateField.click();
 		DTPicker.dateAndTime(inDate, intime);
 
 	}
@@ -91,52 +144,46 @@ public class BusHirePage extends Base {
 	// method to enter the return date and time
 	public void EnterReturnDateandTime(String returnDate, String returnTime)
 			throws InterruptedException, ParseException {
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.id("OSLeadGen_DoJEnd")).click();
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("OSLeadGen_DoJEnd")));
+		Thread.sleep(3000);
+		EndDateField.click();
 		DTPicker.dateAndTime(returnDate, returnTime);
 
 	}
 
 	// method to enter the passenger count
 	public void PassengerCount(String count) throws InterruptedException {
-		Thread.sleep(1000);
-		driver.findElement(By.id("numberOfPax")).sendKeys(count);
-	}
-
-	public void selectCity() {
-		driver.findElement(By.className("select-selected")).click();
-		List<WebElement> select = driver.findElement(By.className("select-items"))
-				.findElements(By.className("select-item"));
-
-		for (int item = 0; item < select.size(); item++) {
-			if (select.get(item).getText().equals("Hyderabad")) {
-				select.get(item).click();
-			}
-		}
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		PassengerCountField.sendKeys(count);
 	}
 
 	// method to click on proceed button of outstation
 	public void ProceedOutstation() throws InterruptedException {
-		driver.findElement(By.id("proceedButtonOutstation")).click();
-		Thread.sleep(2000);
+		ProceedButtonOutstation.click();
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		closeDriver();
 	}
 
 	// mehtod to click on Oneway Trip option
 	public void ClickOnewayTrip() throws InterruptedException {
-		Thread.sleep(1000);
-		driver.findElement(By.id("oneway")).click();
+		Thread.sleep(2000);
+		OnewayButton.click();
 	}
 
-	// end of Bus Hire Outstation
+	// end of methods for Bus Hire Outstation
 
-	public void enterPickLocAirport(String pick) throws InterruptedException {
-		driver.findElement(By.id("locationTextFieldLocal")).sendKeys(pick);
+	// Bus hire for local
+
+	// method to click on local
+	public void clickLocal() throws InterruptedException {
+		driver.switchTo().frame(BusHireOptions);
+		LocalButton.click();
+	}
+
+	// method to enter pickup location for local and chose it from the dropdown
+	public void EnterPickupLoactionLocal(String pick) throws InterruptedException {
 		Thread.sleep(2000);
-
-		List<WebElement> option1 = driver.findElement(By.xpath("/html/body/ul")).findElements(By.tagName("li"));
+		LocationField.sendKeys(pick);
+		List<WebElement> option1 = driver.findElement(By.xpath("/html/body/ul[1]")).findElements(By.tagName("li"));
 		for (int i = 0; i < option1.size(); i++) {
 			List<WebElement> spans = option1.get(i).findElements(By.tagName("span"));
 			if (spans.get(1).getText().equals(pick)) {
@@ -145,28 +192,104 @@ public class BusHirePage extends Base {
 		}
 	}
 
+	// method to select the package for local
+	public void Package(String packageName) throws InterruptedException {
+		List<WebElement> object = PackageOptions
+				.findElements(By.tagName("label"));
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		for (int obj = 0; obj < object.size(); obj++) {
+			if (object.get(obj).getText().equals(packageName)) {
+				object.get(obj).click();
+				break;
+			}
+		}
+	}
+
+	// method to enter date and time for local from when the bus is required
+	public void EnterDateTimeLocal(String inDate, String intime) throws InterruptedException, ParseException {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		DateFieldLocal.click();
+		DTPicker.dateAndTime(inDate, intime);
+
+	}
+
+	// method to click on the proceed button for local
+	public void clickProceedLocal() {
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		ProceedLocal.click();
+		closeDriver();
+	}
+
+	// End of Bus Hire Local methods
+
+	// Start of methods for Airport
+
+	// method to click on Airport button inside Bus Hire
+	public void clickAirport() throws InterruptedException {
+		driver.switchTo().frame(BusHireOptions);
+		AirportButton.click();
+	}
+
+	// method to select the city form the dropdown.
+	public void selectCity(String city) throws InterruptedException {
+		Thread.sleep(3000);
+		CityField.click();
+		List<WebElement> select = CityDropdown
+				.findElements(By.className("select-item"));
+
+		for (int item = 0; item < select.size(); item++) {
+			if (select.get(item).getText().equals(city)) {
+				select.get(item).click();
+			}
+		}
+	}
+
+	// method to enter the destination for airport
+	public void EnterDestinationAirport(String pick) throws InterruptedException {
+		Thread.sleep(3000);
+		LocationField.sendKeys(pick);
+		List<WebElement> option1 = AirportLocationDropdown.findElements(By.tagName("li"));
+		for (int i = 0; i < option1.size(); i++) {
+			List<WebElement> spans = option1.get(i).findElements(By.tagName("span"));
+			if (spans.get(1).getText().equals(pick)) {
+				spans.get(1).click();
+			}
+		}
+	}
+
+	// method to enter date and time for local from when the bus is required
+	public void EnterDateTimeAirport(String inDate, String intime) throws InterruptedException, ParseException {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		DateFieldAirport.click();
+		DTPicker.dateAndTime(inDate, intime);
+	}
+
+	// method to click on the drop to airport option.
 	public void clickDropToAirport() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.findElement(By.id("to_airport")).click();
+		DropToAirportButton.click();
 	}
 
-	public void clicksProceedAirport() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.findElement(By.id("proceedButtonAirport")).click();
+	// method to click on the proceed button of Airport.
+	public void clickProceedAirport() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		ProceedButtonAirport.click();
+		closeDriver();
 	}
 
-	public void clicksLocal() throws InterruptedException {
-		WebElement frame = driver.findElement(By.xpath("/html/body/div[1]/div/div[5]/div[2]/object"));
-		driver.switchTo().frame(frame);
-		driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/div[2]")).click();
+	// method to enter pickup location for Airport and chose it from the dropdown
+	public void EnterPickLocAirport(String pick) throws InterruptedException {
 		Thread.sleep(3000);
+		LocationField.sendKeys(pick);
+		List<WebElement> option1 = AirportLocationDropdown.findElements(By.tagName("li"));
+		for (int i = 0; i < option1.size(); i++) {
+			List<WebElement> spans = option1.get(i).findElements(By.tagName("span"));
+			if (spans.get(1).getText().equals(pick)) {
+				spans.get(1).click();
+			}
+		}
 	}
 
-	public void selectDateforLocal() throws InterruptedException {
-		Thread.sleep(2000);
-		WebElement datefield = driver.findElement(By.id("from_datepicker"));
-		Actions df = new Actions(driver);
-		df.moveToElement(datefield).click().perform();
-	}
+	// end of methods for the Airport
 
 }
